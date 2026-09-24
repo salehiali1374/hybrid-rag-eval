@@ -16,10 +16,13 @@ dependencies = [
     "httpx>=0.27",
     "fastapi>=0.115",
     "uvicorn>=0.30",
+    "numpy>=1.26",
 ]
 
 [project.optional-dependencies]
 dev = ["pytest>=8", "ruff>=0.6"]
+# Install CPU-only PyTorch first: pip install torch --index-url https://download.pytorch.org/whl/cpu
+dense = ["sentence-transformers>=3"]
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/hybrid_rag"]

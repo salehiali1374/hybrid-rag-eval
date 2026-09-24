@@ -9,6 +9,7 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_prefix="HRE_", env_file=".env", extra="ignore")
 
     data_dir: Path = Path("data")
+    embedding_model: str = "intfloat/multilingual-e5-small"
 
 
 def get_settings() -> Settings:
