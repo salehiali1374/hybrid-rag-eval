@@ -9,19 +9,19 @@
   "num_docs": 993,
   "num_queries": 651,
   "metrics": {
-    "recall@1": 0.894,
-    "mrr@1": 0.894,
-    "ndcg@1": 0.894,
-    "recall@5": 0.9693,
-    "mrr@5": 0.9239,
-    "ndcg@5": 0.9353,
-    "recall@10": 0.9754,
-    "mrr@10": 0.9247,
-    "ndcg@10": 0.9373,
-    "recall@20": 0.9816,
-    "mrr@20": 0.9251,
-    "ndcg@20": 0.9388
+    "recall@1": 0.9094,
+    "mrr@1": 0.9094,
+    "ndcg@1": 0.9094,
+    "recall@5": 0.977,
+    "mrr@5": 0.9367,
+    "ndcg@5": 0.9468,
+    "recall@10": 0.9816,
+    "mrr@10": 0.9372,
+    "ndcg@10": 0.9483,
+    "recall@20": 0.9862,
+    "mrr@20": 0.9375,
+    "ndcg@20": 0.9494
   },
-  "index_seconds": 0.34,
-  "ms_per_query": 0.86
+  "index_seconds": 0.31,
+  "ms_per_query": 0.82
 }

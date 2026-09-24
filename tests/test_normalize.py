@@ -27,6 +27,10 @@ class TestNormalize:
         once = normalize("كتاب‌هاي ۱۲")
         assert normalize(once) == once
 
+    def test_alef_madda_becomes_alef(self):
+        assert normalize("آشیل") == "اشیل"
+        assert tokenize("آشیل") == tokenize("اشیل")
+
 
 class TestTokenize:
     def test_drops_punctuation(self):

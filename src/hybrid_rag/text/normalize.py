@@ -9,6 +9,7 @@ import re
 
 _TRANSLATION_TABLE = str.maketrans(
     {
+        "آ": "ا",
         "ك": "ک",
         "ي": "ی",
         "ى": "ی",
@@ -42,7 +43,8 @@ def normalize(text: str) -> str:
     """Return a canonical form of `text`.
 
     Rules, applied in this order of importance:
-    1. Arabic letters -> Persian: "ك" -> "ک", "ي" and "ى" -> "ی".
+    1. Arabic letters -> Persian: "ك" -> "ک", "ي" and "ى" -> "ی";
+       alef madda "آ" -> "ا", because users often type it without the madda.
     2. Persian (۰-۹) and Arabic-Indic (٠-٩) digits -> ASCII 0-9.
     3. Remove Arabic diacritics (U+064B to U+0652) and tatweel "ـ" (U+0640).
     4. Replace the zero-width non-joiner (U+200C) with a space, so that

@@ -1,0 +1,27 @@
+{
+  "method": "bm25",
+  "dataset": "persianqa",
+  "split": "train",
+  "params": {
+    "k1": 1.2,
+    "b": 0.75
+  },
+  "num_docs": 993,
+  "num_queries": 6306,
+  "metrics": {
+    "recall@1": 0.8076,
+    "mrr@1": 0.8076,
+    "ndcg@1": 0.8076,
+    "recall@5": 0.934,
+    "mrr@5": 0.8593,
+    "ndcg@5": 0.8781,
+    "recall@10": 0.9558,
+    "mrr@10": 0.8622,
+    "ndcg@10": 0.8852,
+    "recall@20": 0.967,
+    "mrr@20": 0.863,
+    "ndcg@20": 0.8881
+  },
+  "index_seconds": 0.32,
+  "ms_per_query": 0.88
+}
