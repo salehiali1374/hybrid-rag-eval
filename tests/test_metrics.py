@@ -52,7 +52,8 @@ class TestNdcg:
 class TestEvaluateRun:
     def test_averages_and_penalizes_missing_queries(self):
         qrels = {"q1": {"a": 1}, "q2": {"b": 1}}
-        run = {"q1": ["a", "x"], "q_extra": ["b"]}  # q2 missing, q_extra ignored
+        # q2 missing, q_extra ignored
+        run = {"q1": ["a", "x"], "q_extra": ["b"]}
         scores = evaluate_run(run, qrels, k_values=(1,))
         assert scores["recall@1"] == pytest.approx(0.5)
         assert scores["mrr@1"] == pytest.approx(0.5)
@@ -61,3 +62,17 @@ class TestEvaluateRun:
     def test_keys_for_each_k(self):
         scores = evaluate_run({"q": ["a"]}, {"q": {"a": 1}}, k_values=(1, 10))
         assert set(scores) == {f"{m}@{k}" for m in ("recall", "mrr", "ndcg") for k in (1, 10)}
+
+    def test_zero_grade_is_not_relevant(self):
+        scores = evaluate_run({"q1": ["a", "b"]}, {"q1": {"a": 0, "b": 1}}, k_values=(1,))
+        assert scores["recall@1"] == 0.0
+        assert scores["mrr@1"] == 0.0
+
+    def test_query_without_relevant_docs_is_skipped(self):
+        qrels = {"q1": {"b": 1}, "q2": {"x": 0}}
+        scores = evaluate_run({"q1": ["b"], "q2": ["x"]}, qrels, k_values=(1,))
+        assert scores["recall@1"] == 1.0
+
+    def test_no_evaluable_queries_returns_zero(self):
+        scores = evaluate_run({"q": ["x"]}, {"q": {"x": 0}}, k_values=(1,))
+        assert scores == {"recall@1": 0.0, "mrr@1": 0.0, "ndcg@1": 0.0}
