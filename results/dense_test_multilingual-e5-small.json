@@ -1,0 +1,26 @@
+{
+  "method": "dense",
+  "dataset": "persianqa",
+  "split": "test",
+  "params": {
+    "model": "intfloat/multilingual-e5-small"
+  },
+  "num_docs": 993,
+  "num_queries": 651,
+  "metrics": {
+    "recall@1": 0.9386,
+    "mrr@1": 0.9386,
+    "ndcg@1": 0.9386,
+    "recall@5": 0.9846,
+    "mrr@5": 0.9577,
+    "ndcg@5": 0.9646,
+    "recall@10": 0.9862,
+    "mrr@10": 0.958,
+    "ndcg@10": 0.9651,
+    "recall@20": 0.9892,
+    "mrr@20": 0.9582,
+    "ndcg@20": 0.9659
+  },
+  "query_encode_ms_per_query": 4.56,
+  "search_ms_per_query": 0.502
+}

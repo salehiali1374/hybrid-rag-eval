@@ -27,17 +27,34 @@ class Encoder:
     """
 
     def __init__(self, model: EmbeddingModel, batch_size: int = 32) -> None:
-        raise NotImplementedError
+        self.model = model
+        self.batch_size = batch_size
 
     def encode_queries(self, texts: list[str]) -> np.ndarray:
         """Embed queries: add the "query: " prefix, call `model.encode` once with
         `batch_size=self.batch_size` and `normalize_embeddings=True`, and return a
         float32 array of shape (len(texts), dim)."""
-        raise NotImplementedError
+        prefixed = [f"query: {text}" for text in texts]
+
+        embeddings = self.model.encode(
+            prefixed,
+            batch_size=self.batch_size,
+            normalize_embeddings=True,
+        )
+
+        return np.asarray(embeddings, dtype=np.float32)
 
     def encode_passages(self, texts: list[str]) -> np.ndarray:
         """Same as `encode_queries`, with the "passage: " prefix."""
-        raise NotImplementedError
+        prefixed = [f"passage: {text}" for text in texts]
+
+        embeddings = self.model.encode(
+            prefixed,
+            batch_size=self.batch_size,
+            normalize_embeddings=True,
+        )
+
+        return np.asarray(embeddings, dtype=np.float32)
 
 
 class DenseIndex:
@@ -52,7 +69,26 @@ class DenseIndex:
     def __init__(self, doc_ids: list[str], embeddings: np.ndarray) -> None:
         """Raise ValueError if `embeddings` is not 2-D or its number of rows
         differs from `len(doc_ids)`."""
-        raise NotImplementedError
+        embeddings = np.asarray(embeddings, dtype=np.float32)
+
+        if embeddings.ndim != 2:
+            raise ValueError("embeddings must be a 2-D array")
+
+        if embeddings.shape[0] != len(doc_ids):
+            raise ValueError("number of embeddings must match number of doc_ids")
+
+        self.doc_ids = doc_ids
+
+        norms = np.linalg.norm(embeddings, axis=1, keepdims=True)
+
+        # Only the normalized matrix is kept; the raw one is not needed for search.
+        # Avoid division by zero for zero vectors.
+        self._docs = np.divide(
+            embeddings,
+            norms,
+            out=np.zeros_like(embeddings),
+            where=norms != 0,
+        )
 
     def search(self, query: np.ndarray, top_k: int = 10) -> list[tuple[str, float]]:
         """The `top_k` (doc_id, cosine similarity) pairs, highest first.
@@ -60,7 +96,27 @@ class DenseIndex:
         Ties are broken by doc_id in ascending order. If `top_k` is larger than
         the index, return every document.
         """
-        raise NotImplementedError
+        query = np.asarray(query, dtype=np.float32)
+
+        if query.ndim != 1:
+            raise ValueError("query must be a 1-D array")
+
+        norm = np.linalg.norm(query)
+
+        if norm == 0:
+            similarities = np.zeros(len(self.doc_ids), dtype=np.float32)
+        else:
+            normalized_query = query / norm
+            similarities = self._docs @ normalized_query
+
+        results = [
+            (doc_id, float(score)) for doc_id, score in zip(self.doc_ids, similarities, strict=True)
+        ]
+
+        # Highest similarity first, doc_id ascending for ties.
+        results.sort(key=lambda x: (-x[1], x[0]))
+
+        return results[:top_k]
 
     def search_batch(self, queries: np.ndarray, top_k: int = 10) -> list[list[tuple[str, float]]]:
         """`search` for every row of `queries` (shape (n_queries, dim)).
@@ -68,4 +124,31 @@ class DenseIndex:
         Compute all similarities with ONE matrix product (queries @ docs.T)
         instead of calling `search` in a Python loop.
         """
-        raise NotImplementedError
+        queries = np.asarray(queries, dtype=np.float32)
+
+        if queries.ndim != 2:
+            raise ValueError("queries must be a 2-D array")
+
+        norms = np.linalg.norm(queries, axis=1, keepdims=True)
+
+        normalized_queries = np.divide(
+            queries,
+            norms,
+            out=np.zeros_like(queries),
+            where=norms != 0,
+        )
+
+        # ONE matrix product.
+        similarities = normalized_queries @ self._docs.T
+
+        results = []
+
+        for scores in similarities:
+            row = [
+                (doc_id, float(score)) for doc_id, score in zip(self.doc_ids, scores, strict=True)
+            ]
+
+            row.sort(key=lambda x: (-x[1], x[0]))
+            results.append(row[:top_k])
+
+        return results
