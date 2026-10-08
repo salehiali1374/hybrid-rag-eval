@@ -30,4 +30,16 @@ def reciprocal_rank_fusion(
     Raise ValueError if `weights` is given and its length differs from the
     number of rankings.
     """
-    raise NotImplementedError
+    if weights is None:
+        weights = [1.0] * len(rankings)
+    elif len(weights) != len(rankings):
+        raise ValueError(f"{len(rankings)} rankings but {len(weights)} weights")
+
+    scores: dict[str, float] = {}
+    for ranking, weight in zip(rankings, weights, strict=True):
+        for rank, doc_id in enumerate(ranking, start=1):
+            scores[doc_id] = scores.get(doc_id, 0.0) + weight / (k + rank)
+
+    # Highest score first; equal scores fall back to ascending doc_id.
+    fused = sorted(scores.items(), key=lambda item: (-item[1], item[0]))
+    return fused if top_k is None else fused[:top_k]
