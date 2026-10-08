@@ -1,0 +1,9 @@
+{
+  "note": "Minimum BM25 metrics on the PersianQA test split. Each value is the committed baseline (results/bm25_test_k1-1.2_b-0.75.json: recall@1 0.9094, recall@10 0.9816, mrr@10 0.9372) minus 0.01, rounded down to a multiple of 0.005. BM25 is deterministic, so any drop is a real change of the tokenizer, normalizer or index, not noise. Dense retrieval and reranking are not gated: they need a model download that CI does not do.",
+  "split": "test",
+  "min": {
+    "recall@1": 0.895,
+    "recall@10": 0.97,
+    "mrr@10": 0.925
+  }
+}

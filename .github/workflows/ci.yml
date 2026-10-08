@@ -17,3 +17,5 @@ jobs:
       - run: ruff check .
       - run: ruff format --check .
       - run: pytest -m "not network"
+      - name: Retrieval quality gate (BM25 on PersianQA test)
+        run: python -m hybrid_rag.eval.gate

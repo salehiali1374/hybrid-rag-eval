@@ -11,6 +11,7 @@ class Settings(BaseSettings):
     data_dir: Path = Path("data")
     embedding_model: str = "intfloat/multilingual-e5-small"
     reranker_model: str = "BAAI/bge-reranker-v2-m3"
+    load_reranker: bool = False  # the API loads the 2+ GB cross-encoder only when asked to
     llm_base_url: str = "https://openrouter.ai/api/v1"
     llm_model: str = ""
     llm_api_key: str | None = None  # set HRE_LLM_API_KEY; never commit it
