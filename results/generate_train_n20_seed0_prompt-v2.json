@@ -1,0 +1,568 @@
+{
+  "dataset": "persianqa",
+  "split": "train",
+  "params": {
+    "llm_model": "gemma3:27b-it-q8_0",
+    "context_k": 5,
+    "seed": 0,
+    "rrf_k": 1,
+    "dense_weight": 1.5
+  },
+  "summary": {
+    "answerable": {
+      "n": 20,
+      "gold_in_context": 0.95,
+      "refused": 0.05,
+      "answered_cites_gold": 1.0,
+      "answered_without_citation": 0.0,
+      "answered_with_invalid_citation": 0.0
+    },
+    "unanswerable": {
+      "n": 20,
+      "refused": 0.55,
+      "answered": 0.45
+    },
+    "seconds_per_question": 2.49
+  },
+  "rows": [
+    {
+      "id": "train-4616",
+      "kind": "answerable",
+      "question": "بازیگر نقش خوب در فیلم خوب بد زشت چه کسی است؟",
+      "answer": "کلینت ایستوود بازیگر نقش خوب در فیلم خوب بد زشت است [1].",
+      "refused": false,
+      "citations": [
+        "train-450-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": true,
+      "cites_gold": true,
+      "seconds": 2.5
+    },
+    {
+      "id": "train-8981",
+      "kind": "answerable",
+      "question": "جواد عزتی در چه سالی و در چه شهری متولد شده است؟",
+      "answer": "جواد عزتی در سال ۱۳۶۰ در تهران متولد شده است. [1]",
+      "refused": false,
+      "citations": [
+        "train-887-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": true,
+      "cites_gold": true,
+      "seconds": 2.45
+    },
+    {
+      "id": "train-5032",
+      "kind": "answerable",
+      "question": "تو قرارداد کرسنت گاز کجا رو می خواستن بفروشن؟",
+      "answer": "امارات را می‌خواستند گاز بفروشند [1].",
+      "refused": false,
+      "citations": [
+        "train-492-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": true,
+      "cites_gold": true,
+      "seconds": 2.14
+    },
+    {
+      "id": "train-483",
+      "kind": "answerable",
+      "question": "صفحه نیپکو چگونه کار می‌کرد؟",
+      "answer": "صفحه نیپکو از طریق روشن کردن یک عکس به وسیله لنز و یک صفحهٔ چرخشی کار می‌کرد [2].",
+      "refused": false,
+      "citations": [
+        "train-47-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": true,
+      "cites_gold": true,
+      "seconds": 2.75
+    },
+    {
+      "id": "train-3141",
+      "kind": "answerable",
+      "question": "جنس درپنجره در ایران قدیم چه بود؟",
+      "answer": "",
+      "refused": true,
+      "citations": [],
+      "invalid_citations": [],
+      "gold_in_context": false,
+      "cites_gold": false,
+      "seconds": 1.84
+    },
+    {
+      "id": "train-6093",
+      "kind": "answerable",
+      "question": "نام های دیگر اردبیل در طول تاریخ چه بوده  است؟",
+      "answer": "اردبیل در طول تاریخ به نام‌های «دارالارشاد»، «دارالملک»، «دارالعرفان»، «دارالامان» و «شهر مقدس (آرتاویل)» ملقب بوده‌است [1].",
+      "refused": false,
+      "citations": [
+        "train-598-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": true,
+      "cites_gold": true,
+      "seconds": 3.69
+    },
+    {
+      "id": "train-5795",
+      "kind": "answerable",
+      "question": "چی شد که بشر جاده ساخت؟",
+      "answer": "نیاز به جاده‌های مناسب و هموار از زمان اختراع چرخ حس شد. [1]",
+      "refused": false,
+      "citations": [
+        "train-568-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": true,
+      "cites_gold": true,
+      "seconds": 2.46
+    },
+    {
+      "id": "train-4847",
+      "kind": "answerable",
+      "question": "چرا مک کویین با پدر و مادرش زندگی نکرد؟",
+      "answer": "مادر استیو مک کویین، جولیا، معتاد الکُلی بود و توانایی مراقبت از کودک را نداشت، بنابراین او را در سال ۱۹۳۳ نزد والدینش گذاشت و رفت. [1]",
+      "refused": false,
+      "citations": [
+        "train-473-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": true,
+      "cites_gold": true,
+      "seconds": 3.78
+    },
+    {
+      "id": "train-3657",
+      "kind": "answerable",
+      "question": "تایسون تا چه سالی به صورت حرفه ای بوکس میکرد؟",
+      "answer": "تایسون تا سال ۲۰۰۶ میلادی به صورت حرفه‌ای بوکس می‌کرد [1].",
+      "refused": false,
+      "citations": [
+        "train-354-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": true,
+      "cites_gold": true,
+      "seconds": 2.47
+    },
+    {
+      "id": "train-5686",
+      "kind": "answerable",
+      "question": "سه دین اول دنیا از نظر تعداد پیروان چیه؟",
+      "answer": "مسیحیت، اسلام و هندوگرایی [2][3].",
+      "refused": false,
+      "citations": [
+        "train-428-0",
+        "train-557-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": true,
+      "cites_gold": true,
+      "seconds": 2.28
+    },
+    {
+      "id": "train-4301",
+      "kind": "answerable",
+      "question": "بازی نهنگ آبی از چه طریقی انجام میشود؟",
+      "answer": "بازی نهنگ آبی از طریق تماس‌های آنلاین اینترنتی انجام می‌شود [1].",
+      "refused": false,
+      "citations": [
+        "train-419-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": true,
+      "cites_gold": true,
+      "seconds": 2.28
+    },
+    {
+      "id": "train-6936",
+      "kind": "answerable",
+      "question": "کارگردان با فیلمنامه چیکار می کنه؟",
+      "answer": "کارگردان پس از مطالعهٔ فیلم‌نامه آن را خرد کرده و به قطعات کوچکی به نام سکانس، صحنه و پلان تبدیل می‌کند و متنی با عنوان دکوپاژ تهیه می‌کند [1].",
+      "refused": false,
+      "citations": [
+        "train-682-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": true,
+      "cites_gold": true,
+      "seconds": 3.54
+    },
+    {
+      "id": "train-2665",
+      "kind": "answerable",
+      "question": "مشهور ترین باقلوا ها کدام ها هستند؟",
+      "answer": "باقلوای شهر غازی عِینتاب در ترکیه و باقلوای باکو (باکی باکلاواسی) از مشهورترین باقلواها می‌باشند [1].",
+      "refused": false,
+      "citations": [
+        "train-255-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": true,
+      "cites_gold": true,
+      "seconds": 3.47
+    },
+    {
+      "id": "train-6015",
+      "kind": "answerable",
+      "question": "شخصیت های اصلی بازی اتومبیل‌دزدی بزرگ ۵ چه افرادی هستند؟",
+      "answer": "شخصیت‌های اصلی بازی اتومبیل‌دزدی بزرگ ۵، مایکل دی سانتا، فرانکلین کلینتون و ترور فیلیپس هستند [1].",
+      "refused": false,
+      "citations": [
+        "train-590-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": true,
+      "cites_gold": true,
+      "seconds": 3.16
+    },
+    {
+      "id": "train-1727",
+      "kind": "answerable",
+      "question": "دروازه اصلی ورود به آمریکا کدام شهر است؟",
+      "answer": "شهر نیویورک دروازه اصلی ورود به آمریکا است [1].",
+      "refused": false,
+      "citations": [
+        "train-162-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": true,
+      "cites_gold": true,
+      "seconds": 2.14
+    },
+    {
+      "id": "train-3406",
+      "kind": "answerable",
+      "question": "حسن زیرک در کدام ارکستر ها برنامه داشته است؟",
+      "answer": "حسن زیرک در «ارکستر موسیقی کردی» برادران یوسف‌زمانی، ارکستر مشیر همایون شهردار در تهران و ارکستر مجتبی میرزاده در کرمانشاه همکاری داشته و برنامه اجرا کرده‌است. [1]",
+      "refused": false,
+      "citations": [
+        "train-329-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": true,
+      "cites_gold": true,
+      "seconds": 3.85
+    },
+    {
+      "id": "train-1734",
+      "kind": "answerable",
+      "question": "منظومه شمسی چگونه بوجود آمد؟",
+      "answer": "منظومهٔ خورشیدی از انفجار یک اَبَر نو اختر و فروریزش یک اَبَر ملکولی چرخان پدید آمد. [1]",
+      "refused": false,
+      "citations": [
+        "train-163-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": true,
+      "cites_gold": true,
+      "seconds": 3.08
+    },
+    {
+      "id": "train-8954",
+      "kind": "answerable",
+      "question": "علوم اجتماعی چه زیر شاخه هایی داره؟",
+      "answer": "علوم اجتماعی شامل انسان‌شناسی، باستان‌شناسی، مطالعات ارتباطات، اقتصاد، تاریخ، مطالعات اجتماعی، موسیقی‌شناسی، جغرافیای انسانی، حقوق، زبان‌شناسی، علوم سیاسی، روان‌شناسی، سلامت عمومی و جامعه‌شناسی است [1].",
+      "refused": false,
+      "citations": [
+        "train-884-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": true,
+      "cites_gold": true,
+      "seconds": 3.89
+    },
+    {
+      "id": "train-1127",
+      "kind": "answerable",
+      "question": "چگونه هیچ کس نمی تواند شما را در سطح وب پیدا کند",
+      "answer": "ممکن است یک سایت به دلایل منطقی‌ای طراحی شده باشد، ولی آن‌ها زحمت ثبت‌نام کردن آن در هیچ‌یک از موتورهای جستجو را به خود ندادند؛ بنابراین، هیچ‌کس نمی‌تواند آن‌ها را پیدا کند! [1]",
+      "refused": false,
+      "citations": [
+        "train-110-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": true,
+      "cites_gold": true,
+      "seconds": 3.86
+    },
+    {
+      "id": "train-7345",
+      "kind": "answerable",
+      "question": "آبجو چه تاثیری روی میزان مصرف غذا دارد؟",
+      "answer": "آبجو اشتهای خوردن غذا را زیاد می‌کند [1].",
+      "refused": false,
+      "citations": [
+        "train-723-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": true,
+      "cites_gold": true,
+      "seconds": 2.12
+    },
+    {
+      "id": "train-3538",
+      "kind": "unanswerable",
+      "question": "اولین ماشین زمان کی اختراع شد؟",
+      "answer": "",
+      "refused": true,
+      "citations": [],
+      "invalid_citations": [],
+      "gold_in_context": false,
+      "cites_gold": false,
+      "seconds": 1.68
+    },
+    {
+      "id": "train-7388",
+      "kind": "unanswerable",
+      "question": "ستارخان چندتا اسلحه داشت؟",
+      "answer": "",
+      "refused": true,
+      "citations": [],
+      "invalid_citations": [],
+      "gold_in_context": false,
+      "cites_gold": false,
+      "seconds": 1.68
+    },
+    {
+      "id": "train-8330",
+      "kind": "unanswerable",
+      "question": "توپ چقدر قطر داره؟",
+      "answer": "قطر توپ ۴۶ سانتی‌متر است [1].",
+      "refused": false,
+      "citations": [
+        "train-721-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": false,
+      "cites_gold": false,
+      "seconds": 2.13
+    },
+    {
+      "id": "train-2109",
+      "kind": "unanswerable",
+      "question": "صاحب شرکت کوکاکولا کیست؟",
+      "answer": "وارن بافت مالک شرکت‌های کوکاکولا است [1].",
+      "refused": false,
+      "citations": [
+        "train-200-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": false,
+      "cites_gold": false,
+      "seconds": 2.3
+    },
+    {
+      "id": "train-4349",
+      "kind": "unanswerable",
+      "question": "پستان اسب در کدام قسمت بدن ان قرار دارد؟",
+      "answer": "",
+      "refused": true,
+      "citations": [],
+      "invalid_citations": [],
+      "gold_in_context": false,
+      "cites_gold": false,
+      "seconds": 1.72
+    },
+    {
+      "id": "train-1380",
+      "kind": "unanswerable",
+      "question": "یخچال های قدیمی با چه نیروی کار می کردند؟",
+      "answer": "یخچال‌های قدیمی با جریان الکتریسیته، نفت، گاز و یا به صورت طبیعی (چشمه‌ها، چاه‌ها، غارها) کار می‌کردند [1].",
+      "refused": false,
+      "citations": [
+        "train-134-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": false,
+      "cites_gold": false,
+      "seconds": 3.34
+    },
+    {
+      "id": "train-1030",
+      "kind": "unanswerable",
+      "question": "خواص گوجه برای زن‌ها چیست؟",
+      "answer": "",
+      "refused": true,
+      "citations": [],
+      "invalid_citations": [],
+      "gold_in_context": false,
+      "cites_gold": false,
+      "seconds": 1.64
+    },
+    {
+      "id": "train-4620",
+      "kind": "unanswerable",
+      "question": "بهترین فیلم وسترن تاریخ سینمایی هند چیست؟",
+      "answer": "",
+      "refused": true,
+      "citations": [],
+      "invalid_citations": [],
+      "gold_in_context": false,
+      "cites_gold": false,
+      "seconds": 1.67
+    },
+    {
+      "id": "train-6559",
+      "kind": "unanswerable",
+      "question": "سومین کشور پهناور در دنیا چه نام دارد؟",
+      "answer": "",
+      "refused": true,
+      "citations": [],
+      "invalid_citations": [],
+      "gold_in_context": false,
+      "cites_gold": false,
+      "seconds": 1.88
+    },
+    {
+      "id": "train-7758",
+      "kind": "unanswerable",
+      "question": "فردین چرا برای خرید به خارج رفت؟",
+      "answer": "",
+      "refused": true,
+      "citations": [],
+      "invalid_citations": [],
+      "gold_in_context": false,
+      "cites_gold": false,
+      "seconds": 1.88
+    },
+    {
+      "id": "train-1409",
+      "kind": "unanswerable",
+      "question": "چرا تحصیل دانشجویان انگلیسی را در دانشگاه پاریس ممنوع کردند؟",
+      "answer": "هنری دوم تحصیل دانشجویان انگلیسی را در دانشگاه پاریس ممنوع کرد [1].",
+      "refused": false,
+      "citations": [
+        "train-137-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": false,
+      "cites_gold": false,
+      "seconds": 2.28
+    },
+    {
+      "id": "train-4948",
+      "kind": "unanswerable",
+      "question": "نفت سفید را به عنوان سوخت چه چیزی نمی توان استفاده کرد؟",
+      "answer": "",
+      "refused": true,
+      "citations": [],
+      "invalid_citations": [],
+      "gold_in_context": false,
+      "cites_gold": false,
+      "seconds": 1.65
+    },
+    {
+      "id": "train-6040",
+      "kind": "unanswerable",
+      "question": "کیبورد چگونه کار می‌کند؟",
+      "answer": "صفحه‌کلید با استفاده از یک آرایش از دکمه‌ها به حالت اهرم مکانیکی یا سوئیچ الکترونیکی عمل می‌کند [1].",
+      "refused": false,
+      "citations": [
+        "train-592-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": false,
+      "cites_gold": false,
+      "seconds": 2.9
+    },
+    {
+      "id": "train-4430",
+      "kind": "unanswerable",
+      "question": "کدام دین ها ابراهیمی است؟",
+      "answer": "اسلام، یهودیت و مسیحیت دین‌های ابراهیمی هستند [1][2][3].",
+      "refused": false,
+      "citations": [
+        "train-429-0",
+        "train-431-0",
+        "train-428-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": false,
+      "cites_gold": false,
+      "seconds": 2.51
+    },
+    {
+      "id": "train-8458",
+      "kind": "unanswerable",
+      "question": "چرا قلیان در بین اعراب به شیشه و نارجیلة معروف است؟",
+      "answer": "در کشورهای عربی، قلیان به نام شیشه و نارجیلة معروف است [1].",
+      "refused": false,
+      "citations": [
+        "train-834-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": false,
+      "cites_gold": false,
+      "seconds": 2.48
+    },
+    {
+      "id": "train-8859",
+      "kind": "unanswerable",
+      "question": "سیامک نعمتی در اولین مصاحبه خود در تیم پرسپولیس چه گفت؟",
+      "answer": "",
+      "refused": true,
+      "citations": [],
+      "invalid_citations": [],
+      "gold_in_context": false,
+      "cites_gold": false,
+      "seconds": 1.62
+    },
+    {
+      "id": "train-2908",
+      "kind": "unanswerable",
+      "question": "خروس با مرغ چن بچه دارند؟",
+      "answer": "",
+      "refused": true,
+      "citations": [],
+      "invalid_citations": [],
+      "gold_in_context": false,
+      "cites_gold": false,
+      "seconds": 1.89
+    },
+    {
+      "id": "train-7659",
+      "kind": "unanswerable",
+      "question": "پایتخت خرطوم کدام کشوراست؟",
+      "answer": "خرطوم، پایتخت سودان است [3].",
+      "refused": false,
+      "citations": [
+        "train-754-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": false,
+      "cites_gold": false,
+      "seconds": 2.1
+    },
+    {
+      "id": "train-6628",
+      "kind": "unanswerable",
+      "question": "منظور از جنگ های نامنظم چیست؟",
+      "answer": "جنگ‌های نامنظم به درگیری‌های نظامی بین نیروهای آمریکایی و نیروهای کمونیستی در لائوس و کامبوج اشاره دارد [2].",
+      "refused": false,
+      "citations": [
+        "train-223-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": false,
+      "cites_gold": false,
+      "seconds": 2.92
+    },
+    {
+      "id": "train-6159",
+      "kind": "unanswerable",
+      "question": "مسی در چه سنی از فوتبال کناره گیری کرد؟",
+      "answer": "",
+      "refused": true,
+      "citations": [],
+      "invalid_citations": [],
+      "gold_in_context": false,
+      "cites_gold": false,
+      "seconds": 1.71
+    }
+  ]
+}

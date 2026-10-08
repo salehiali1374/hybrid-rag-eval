@@ -1,0 +1,580 @@
+{
+  "dataset": "persianqa",
+  "split": "test",
+  "params": {
+    "llm_model": "gemma3:27b-it-q8_0",
+    "context_k": 5,
+    "seed": 0,
+    "rrf_k": 1,
+    "dense_weight": 1.5
+  },
+  "summary": {
+    "answerable": {
+      "n": 20,
+      "gold_in_context": 1.0,
+      "refused": 0.0,
+      "answered_cites_gold": 1.0,
+      "answered_without_citation": 0.0,
+      "answered_with_invalid_citation": 0.0
+    },
+    "unanswerable": {
+      "n": 20,
+      "refused": 0.45,
+      "answered": 0.55
+    },
+    "seconds_per_question": 2.69
+  },
+  "rows": [
+    {
+      "id": "test-10057",
+      "kind": "answerable",
+      "question": "اولین ویژگی سگ ژرمن شپرد خوب چیه؟",
+      "answer": "نخستین ویژگی یک جرمن شپرد خوب، قدرت، چالاکی، عضلات مناسب و هوشیاری است. [1]",
+      "refused": false,
+      "citations": [
+        "test-56-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": true,
+      "cites_gold": true,
+      "seconds": 2.8
+    },
+    {
+      "id": "test-10144",
+      "kind": "answerable",
+      "question": "یک حادثه از نظر فرد پارانویا چگونه است؟",
+      "answer": "از منظر یک فرد پارانوئید، یک حادثه ممکن است توطئه تلقی شود [1].",
+      "refused": false,
+      "citations": [
+        "test-61-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": true,
+      "cites_gold": true,
+      "seconds": 2.45
+    },
+    {
+      "id": "test-9198",
+      "kind": "answerable",
+      "question": "عهد جدید به جز چهار کتاب اصلی شامل چه چیزهای دیگری می شود",
+      "answer": "عهد جدید علاوه بر چهار انجیل اصلی، کتاب اعمال رسولان، نامه‌های رسولان مسیح و کتاب مکاشفه را هم دربرمی‌گیرد [1].",
+      "refused": false,
+      "citations": [
+        "test-5-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": true,
+      "cites_gold": true,
+      "seconds": 2.93
+    },
+    {
+      "id": "test-9742",
+      "kind": "answerable",
+      "question": "هدف یونسکو چیه؟",
+      "answer": "هدف یونسکو کمک به ایجاد صلح، ریشه کن کردن فقر، توسعه پایدار و گفتگوی بین فرهنگی از طریق آموزش، علوم، فرهنگ، ارتباطات و اطلاعات است [1].",
+      "refused": false,
+      "citations": [
+        "test-37-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": true,
+      "cites_gold": true,
+      "seconds": 3.36
+    },
+    {
+      "id": "test-10369",
+      "kind": "answerable",
+      "question": "درزیان چه حکمی در مورد نماز جماعت دارند؟",
+      "answer": "درزیان شرکت در نماز جماعت را برای تقیه جایز می‌دانند [1].",
+      "refused": false,
+      "citations": [
+        "test-74-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": true,
+      "cites_gold": true,
+      "seconds": 2.26
+    },
+    {
+      "id": "test-10308",
+      "kind": "answerable",
+      "question": "اسم کتاب های هراری چیست؟",
+      "answer": "اسم کتاب‌های هراری انسان خردمند: تاریخ مختصر بشر، انسان خداگونه: تاریخ مختصر آینده و بیست‌ویک درس برای سده بیست‌ویکم است [1][2][3].",
+      "refused": false,
+      "citations": [
+        "test-71-0",
+        "train-151-0",
+        "train-150-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": true,
+      "cites_gold": true,
+      "seconds": 3.19
+    },
+    {
+      "id": "test-10106",
+      "kind": "answerable",
+      "question": "یوسف پیامبر راجب چیست؟",
+      "answer": "یوسف (به عبری) از شخصیت‌های تنخ یهودی، عهد عتیق و قرآن است و یهودیان، مسیحیان و مسلمانان به پیامبری او باور دارند [1]. داستان یوسف در قرآن به عنوان «احسن القصص» (بهترین قصه) یاد شده است [1]. همچنین یوسف پیامبر نام یک سریال تلویزیونی به کارگردانی فرج‌الله سلحشور است [2].",
+      "refused": false,
+      "citations": [
+        "train-305-0",
+        "test-59-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": true,
+      "cites_gold": true,
+      "seconds": 5.34
+    },
+    {
+      "id": "test-9853",
+      "kind": "answerable",
+      "question": "آبراهام لینکلن در کجا به دنیا آمد؟",
+      "answer": "آبراهام لینکلن در خانواده‌ای تهی‌دست در یک کلبه چوبی واقع در ایالت کنتاکی متولد شد [1].",
+      "refused": false,
+      "citations": [
+        "test-44-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": true,
+      "cites_gold": true,
+      "seconds": 2.91
+    },
+    {
+      "id": "test-10284",
+      "kind": "answerable",
+      "question": "در عربی به بیابان چه می‌گویند؟",
+      "answer": "در عربی به بیابان صحراء می‌گویند [1].",
+      "refused": false,
+      "citations": [
+        "test-69-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": true,
+      "cites_gold": true,
+      "seconds": 2.24
+    },
+    {
+      "id": "test-9989",
+      "kind": "answerable",
+      "question": "توربین های بادی بزرگ برای چی استفاده می شن؟",
+      "answer": "توربین‌های بادی بزرگ‌تر با چرخاندن ژنراتور، و تبدیل انرژی مکانیکی به انرژی الکتریکی، به عنوان یک منبع تولید انرژی الکتریکی به‌شمار می‌روند. [1]",
+      "refused": false,
+      "citations": [
+        "test-52-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": true,
+      "cites_gold": true,
+      "seconds": 3.47
+    },
+    {
+      "id": "test-10550",
+      "kind": "answerable",
+      "question": "یونان از شرق با کدام کشور همسایه است؟",
+      "answer": "یونان از شرق با ترکیه همسایه است [1].",
+      "refused": false,
+      "citations": [
+        "test-85-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": true,
+      "cites_gold": true,
+      "seconds": 2.15
+    },
+    {
+      "id": "test-9640",
+      "kind": "answerable",
+      "question": "رمزگذاری چیه؟",
+      "answer": "رمزگذاری، روند رمز کردن پیام‌ها یا اطلاعات است به گونه ای که تنها افراد مجاز قادر به خواندن آن باشند [1]. در رمزگذاری معمولاً یک کلید رمزگذاری شبه تصادفی تولید شده توسط یک الگوریتم، به کار گرفته می‌شود [1].",
+      "refused": false,
+      "citations": [
+        "test-31-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": true,
+      "cites_gold": true,
+      "seconds": 3.85
+    },
+    {
+      "id": "test-10352",
+      "kind": "answerable",
+      "question": "بنزما در تاریخ لیگ قهرمانان اروپا چه مقامی دارد؟",
+      "answer": "بنزما بهترین گلزن فرانسوی تاریخ لیگ قهرمانان اروپا با ۵۵ گل است [1].",
+      "refused": false,
+      "citations": [
+        "test-73-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": true,
+      "cites_gold": true,
+      "seconds": 2.41
+    },
+    {
+      "id": "test-9445",
+      "kind": "answerable",
+      "question": "انواع وابستگی کدامند؟",
+      "answer": "انواع وابستگی شامل ایده‌ها، تبادلات مالی، دوستان، خویشاوندان، لینک‌های وب و سرایت بیماری‌ها است [3].",
+      "refused": false,
+      "citations": [
+        "test-20-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": true,
+      "cites_gold": true,
+      "seconds": 3.01
+    },
+    {
+      "id": "test-9800",
+      "kind": "answerable",
+      "question": "به ایستگاه فضایی مدار پایین چی می گن؟",
+      "answer": "ایستگاه‌های مدار پایین را «ایستگاه مداری» هم می‌خوانند [1].",
+      "refused": false,
+      "citations": [
+        "test-41-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": true,
+      "cites_gold": true,
+      "seconds": 2.32
+    },
+    {
+      "id": "test-9447",
+      "kind": "answerable",
+      "question": "رأس‌ها در شبکه های اجتماعی نشان دهنده چه چیزی هستند؟",
+      "answer": "رأس‌ها، بازیگران فردی درون شبکه‌ها هستند [1].",
+      "refused": false,
+      "citations": [
+        "test-20-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": true,
+      "cites_gold": true,
+      "seconds": 2.25
+    },
+    {
+      "id": "test-9334",
+      "kind": "answerable",
+      "question": "دانته آلیگیری چه کسی بود؟",
+      "answer": "دانته آلیگیری شاعر و نویسنده ایتالیایی بود که نوشتن کمدی الهی را در سال ۱۳۰۸ میلادی آغاز کرد و تا زمان مرگش در سال ۱۳۲۱ میلادی کامل کرد [1].",
+      "refused": false,
+      "citations": [
+        "test-13-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": true,
+      "cites_gold": true,
+      "seconds": 3.62
+    },
+    {
+      "id": "test-10637",
+      "kind": "answerable",
+      "question": "تاتلیس به جز ترکی دیگه به چه زبان هایی ترانه می خواند؟",
+      "answer": "تاتلیسس افزون‌بر زبان ترکی، به زبان‌های عربی و کردی نیز تسلط کامل دارد و گهگاه به این زبان‌ها ترانه‌ای می‌خواند [1].",
+      "refused": false,
+      "citations": [
+        "test-90-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": true,
+      "cites_gold": true,
+      "seconds": 3.18
+    },
+    {
+      "id": "test-9721",
+      "kind": "answerable",
+      "question": "مدیر عامل فعلی یونیسف کی بود؟",
+      "answer": "مدیر عامل فعلی یونیسف آن و نمان است [1].",
+      "refused": false,
+      "citations": [
+        "test-36-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": true,
+      "cites_gold": true,
+      "seconds": 2.24
+    },
+    {
+      "id": "test-10422",
+      "kind": "answerable",
+      "question": "راه آزاد خلیج فارس کجاست؟",
+      "answer": "خلیج فارس در امتداد دریای عمان و در میان ایران و شبه‌جزیره عربستان قرار دارد [1].",
+      "refused": false,
+      "citations": [
+        "test-77-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": true,
+      "cites_gold": true,
+      "seconds": 2.67
+    },
+    {
+      "id": "test-9540",
+      "kind": "unanswerable",
+      "question": "قهرمان والیبال جهان کدوم تیمه؟",
+      "answer": "",
+      "refused": true,
+      "citations": [],
+      "invalid_citations": [],
+      "gold_in_context": false,
+      "cites_gold": false,
+      "seconds": 1.7
+    },
+    {
+      "id": "test-10001",
+      "kind": "unanswerable",
+      "question": "نیروگاه بادی ایران کجاست؟",
+      "answer": "",
+      "refused": true,
+      "citations": [],
+      "invalid_citations": [],
+      "gold_in_context": false,
+      "cites_gold": false,
+      "seconds": 1.63
+    },
+    {
+      "id": "test-9389",
+      "kind": "unanswerable",
+      "question": "صلاح الدین چند تا زن داشت؟",
+      "answer": "",
+      "refused": true,
+      "citations": [],
+      "invalid_citations": [],
+      "gold_in_context": false,
+      "cites_gold": false,
+      "seconds": 1.71
+    },
+    {
+      "id": "test-9320",
+      "kind": "unanswerable",
+      "question": "چرا دکارت به عصر روشنگری مشهور بود؟",
+      "answer": "رنه دکارت ریاضی‌دان و فیلسوف فرانسوی معروف عصر روشنگری بود [1].",
+      "refused": false,
+      "citations": [
+        "test-12-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": false,
+      "cites_gold": false,
+      "seconds": 2.46
+    },
+    {
+      "id": "test-10068",
+      "kind": "unanswerable",
+      "question": "چند مدل ژرمن شپرد داریم؟",
+      "answer": "در خاورمیانه دسته‌هایی از شپردهای پلاس فراوان هستند اما نژاد ژرمن شپرد بیشتر در اروپا زندگی دیده شده‌است [1].",
+      "refused": false,
+      "citations": [
+        "test-56-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": false,
+      "cites_gold": false,
+      "seconds": 3.07
+    },
+    {
+      "id": "test-10476",
+      "kind": "unanswerable",
+      "question": "طعم‌دهنده‌های غذا را نام ببرید؟",
+      "answer": "طعم‌دهنده‌ها عموماً از گیاهان معطر تهیه می‌شوند [1]. همچنین ادویه‌ها نیز به منظور عطر و طعم‌دهی به غذا استفاده می‌شوند [2]. در تهیه بستنی از طعم‌دهنده‌ها استفاده می‌شود [5].",
+      "refused": false,
+      "citations": [
+        "test-80-0",
+        "train-746-0",
+        "train-28-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": false,
+      "cites_gold": false,
+      "seconds": 4.11
+    },
+    {
+      "id": "test-9404",
+      "kind": "unanswerable",
+      "question": "لاتین در جنگ با هون ها چرا شکست خورد؟",
+      "answer": "",
+      "refused": true,
+      "citations": [],
+      "invalid_citations": [],
+      "gold_in_context": false,
+      "cites_gold": false,
+      "seconds": 1.75
+    },
+    {
+      "id": "test-10136",
+      "kind": "unanswerable",
+      "question": "هزینه برگزاری جشنواره فیلم فجر چقدر است؟",
+      "answer": "",
+      "refused": true,
+      "citations": [],
+      "invalid_citations": [],
+      "gold_in_context": false,
+      "cites_gold": false,
+      "seconds": 1.67
+    },
+    {
+      "id": "test-10373",
+      "kind": "unanswerable",
+      "question": "طهارت در کدام رکن دین جا ندارد؟",
+      "answer": "دروزیان طهارت را از ارکان دین نمی‌دانند. [1]",
+      "refused": false,
+      "citations": [
+        "test-74-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": false,
+      "cites_gold": false,
+      "seconds": 2.35
+    },
+    {
+      "id": "test-10018",
+      "kind": "unanswerable",
+      "question": "چند مدل مسابقه اتوموبیل رانی فرمول داریم؟",
+      "answer": "طبق متن، فرمول یک به کلاسی از خودروها گفته می‌شود که تک نفره و «چرخ باز» هستند و فصل قهرمانی آن از مجموعه‌ای از مسابقات به نام جایزه بزرگ تشکیل شده است [1]. بنابراین، یک مدل مسابقه اتوموبیل‌رانی فرمول وجود دارد.",
+      "refused": false,
+      "citations": [
+        "test-53-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": false,
+      "cites_gold": false,
+      "seconds": 4.31
+    },
+    {
+      "id": "test-9695",
+      "kind": "unanswerable",
+      "question": "آخرین ماشین تولید شده توسط شرکت تویوتا چیه؟",
+      "answer": "",
+      "refused": true,
+      "citations": [],
+      "invalid_citations": [],
+      "gold_in_context": false,
+      "cites_gold": false,
+      "seconds": 1.65
+    },
+    {
+      "id": "test-10493",
+      "kind": "unanswerable",
+      "question": "کار نورون‌ها چیست؟",
+      "answer": "نورون‌ها نورون‌های حسی به سلول‌های گیرنده مختلفی متصل شده یا به آن‌ها پاسخ می‌دهند و نورون‌ها اطلاعات را از طریق سیناپس‌ها منتقل می‌کنند [1][2].",
+      "refused": false,
+      "citations": [
+        "test-81-0",
+        "train-86-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": false,
+      "cites_gold": false,
+      "seconds": 3.41
+    },
+    {
+      "id": "test-10391",
+      "kind": "unanswerable",
+      "question": "کسروی برای کدام اشعار احترام می گذاشت؟",
+      "answer": "",
+      "refused": true,
+      "citations": [],
+      "invalid_citations": [],
+      "gold_in_context": false,
+      "cites_gold": false,
+      "seconds": 1.69
+    },
+    {
+      "id": "test-10613",
+      "kind": "unanswerable",
+      "question": "در تهیه پارچه از چه الیافی مخلوط با پنبه استفاده می‌شود؟",
+      "answer": "در تهیه پارچه علاوه بر پنبه، از الیاف ابریشم و پشم نیز استفاده می‌شود [1][2][4].",
+      "refused": false,
+      "citations": [
+        "test-88-0",
+        "train-555-0",
+        "train-817-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": false,
+      "cites_gold": false,
+      "seconds": 2.98
+    },
+    {
+      "id": "test-9864",
+      "kind": "unanswerable",
+      "question": "رقیب حزب جمهوری خواه کیه؟",
+      "answer": "حزب دموکرات رقیب حزب جمهوری‌خواه است [3].",
+      "refused": false,
+      "citations": [
+        "train-573-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": false,
+      "cites_gold": false,
+      "seconds": 2.2
+    },
+    {
+      "id": "test-9286",
+      "kind": "unanswerable",
+      "question": "مریم مقدس در چه سالی کشته شد؟",
+      "answer": "",
+      "refused": true,
+      "citations": [],
+      "invalid_citations": [],
+      "gold_in_context": false,
+      "cites_gold": false,
+      "seconds": 1.61
+    },
+    {
+      "id": "test-9150",
+      "kind": "unanswerable",
+      "question": "فرزاد مجیدی در چه تیم های بازی کرده؟",
+      "answer": "مطابق با متن، فرزاد مجیدی در فوتبال بازی کرده‌است، اما نام تیم‌هایی که در آن‌ها بازی کرده ذکر نشده است [1].",
+      "refused": false,
+      "citations": [
+        "test-2-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": false,
+      "cites_gold": false,
+      "seconds": 2.75
+    },
+    {
+      "id": "test-9372",
+      "kind": "unanswerable",
+      "question": "در جهان زیرین چرا رودخانه وجود دارد؟",
+      "answer": "در جهان زیرین رودخانه‌ای به نام استوکس وجود دارد که سیاه است [2].",
+      "refused": false,
+      "citations": [
+        "test-15-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": false,
+      "cites_gold": false,
+      "seconds": 2.38
+    },
+    {
+      "id": "test-10271",
+      "kind": "unanswerable",
+      "question": "دشت‌های ایران را نام ببرید.",
+      "answer": "دشت کویر و دشت یزد ـ اردکان از دشت‌های ایران هستند [2][4].",
+      "refused": false,
+      "citations": [
+        "test-68-0",
+        "train-535-0"
+      ],
+      "invalid_citations": [],
+      "gold_in_context": false,
+      "cites_gold": false,
+      "seconds": 2.56
+    },
+    {
+      "id": "test-9115",
+      "kind": "unanswerable",
+      "question": "بارسلونا چند بار قهرمان لیگ قهرمانان اروپا شده؟",
+      "answer": "",
+      "refused": true,
+      "citations": [],
+      "invalid_citations": [],
+      "gold_in_context": false,
+      "cites_gold": false,
+      "seconds": 2.83
+    }
+  ]
+}
