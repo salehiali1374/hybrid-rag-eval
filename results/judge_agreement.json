@@ -1,0 +1,19 @@
+{
+  "judge_model": "gemma3:27b-it-q8_0",
+  "compared": {
+    "n": 49,
+    "accuracy": 1.0,
+    "kappa": 1.0,
+    "tp": 48,
+    "fp": 0,
+    "fn": 0,
+    "tn": 1
+  },
+  "human_correct_rate": 0.9796,
+  "left_out": {
+    "unsure": 1,
+    "unlabeled": 0,
+    "judge_unclear": 0
+  },
+  "disagreements": []
+}

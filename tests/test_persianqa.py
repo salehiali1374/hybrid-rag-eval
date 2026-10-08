@@ -11,7 +11,16 @@ RAW = {
                     {
                         "context": "باشگاه فوتبال رئال مادرید در مادرید قرار دارد.",
                         "qas": [
-                            {"id": 1, "question": "پایتخت اسپانیا کجاست؟", "is_impossible": False},
+                            {
+                                "id": 1,
+                                "question": "پایتخت اسپانیا کجاست؟",
+                                "is_impossible": False,
+                                "answers": [
+                                    {"text": "مادرید"},
+                                    {"text": "مادرید "},
+                                    {"text": "شهر مادرید"},
+                                ],
+                            },
                             {"id": 2, "question": "مربی تیم کیست؟", "is_impossible": True},
                         ],
                     }
@@ -42,6 +51,12 @@ def test_parse_builds_corpus_qrels_and_unanswerable():
     assert ds.splits["test"].qrels == {"test-1": {doc_id: 1}}
     assert set(ds.splits["test"].unanswerable) == {"test-2"}
     assert ds.splits["train"].qrels == {"train-3": {doc_id: 1}}
+
+
+def test_parse_keeps_distinct_reference_answers_in_order():
+    ds = parse(RAW)
+    assert ds.splits["test"].queries["test-1"].answers == ("مادرید", "شهر مادرید")
+    assert ds.splits["train"].queries["train-3"].answers == ()  # no "answers" key in the raw data
 
 
 @pytest.mark.network

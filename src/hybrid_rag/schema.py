@@ -22,6 +22,7 @@ class Document:
 class Query:
     id: str
     text: str
+    answers: tuple[str, ...] = ()  # reference answers (distinct, in file order); () if unknown
 
 
 @dataclass

@@ -73,6 +73,11 @@ def parse_answer(raw: str, doc_ids: list[str]) -> Answer:
     return Answer(text=text, citations=citations, invalid_citations=invalid)
 
 
+def strip_citations(text: str) -> str:
+    """`text` without its [n] markers, e.g. for showing the answer to a judge."""
+    return re.sub(r"\s*" + _CITATION.pattern, "", text.translate(_DIGITS)).strip()
+
+
 def generate_answer(client: LLMClient, question: str, passages: list[tuple[str, str]]) -> Answer:
     """Ask `client` to answer `question` from `passages` and check its reply."""
     reply = client.complete(build_messages(question, passages))

@@ -53,7 +53,10 @@ def parse(raw_by_split: dict[str, dict]) -> RetrievalDataset:
                     corpus[doc_id] = Document(id=doc_id, text=context, title=article["title"])
 
                 for qa in paragraph["qas"]:
-                    query = Query(id=f"{split}-{qa['id']}", text=qa["question"].strip())
+                    answers = tuple(dict.fromkeys(a["text"].strip() for a in qa.get("answers", [])))
+                    query = Query(
+                        id=f"{split}-{qa['id']}", text=qa["question"].strip(), answers=answers
+                    )
                     if qa.get("is_impossible", False):
                         query_set.unanswerable[query.id] = query
                     else:

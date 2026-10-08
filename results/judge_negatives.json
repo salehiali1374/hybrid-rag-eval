@@ -1,0 +1,10 @@
+{
+  "judge_model": "gemma3:27b-it-q8_0",
+  "kind": "synthetic: the answer to a different question",
+  "n": 25,
+  "rejected": 25,
+  "wrongly_accepted": 0,
+  "judge_unclear": 0,
+  "rejection_rate": 1.0,
+  "wrongly_accepted_pairs": []
+}
