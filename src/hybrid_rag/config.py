@@ -10,6 +10,7 @@ class Settings(BaseSettings):
 
     data_dir: Path = Path("data")
     embedding_model: str = "intfloat/multilingual-e5-small"
+    reranker_model: str = "BAAI/bge-reranker-v2-m3"
 
 
 def get_settings() -> Settings:
